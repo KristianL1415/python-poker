@@ -12,4 +12,8 @@ class CardDeck():
 
         for i in range(0, 4):
             for j in range(0, 13):
-                self.cards.append(Card.Card(i, j))
+                self.cards.append(Card.Card(suits[i], values[j]))
+
+    def shuffle(self):
+        if (len(self.cards) == 52):
+            print("Shuffling")

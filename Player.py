@@ -1,14 +1,10 @@
-# HumanPlayer.py
-# controls the human actions for a player
-# In the future this should inherit from Player class
+# Player.py
+# Parent class for Human/AI players
+# NOTE: This class is currently not in use since I am too dumb to figure out inheritance at the moment...
 
-import Card
-
-class HumanPlayer():
+class Player(object):
     def __init__(self, startingChipCount):
         self.chipCount = startingChipCount
-        emptyCard = Card.Card(" ", " ")
-        self.hand = [emptyCard, emptyCard]
 
     def check():
         # player checks
