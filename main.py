@@ -1,7 +1,7 @@
 # main.py
 
-import dealer
-import humanPlayer
-import computerPlayer
+import Dealer
+import HumanPlayer
+import ComputerPlayer
 
-dealer.setupNewGame()
+dealer = Dealer.Dealer()

@@ -3,6 +3,6 @@
 
 class Game():
     def __init__(self, totalPlayers):
-        self.totalPlayerCount = totalPlayers
-        self.aiPlayerCount = totalPlayers - 1 # one human for now, change later
+        self.totalPlayerCount = int(totalPlayers)
+        self.aiPlayerCount = self.totalPlayerCount - 1 # one human for now, change later
         self.humanPlayerCount = 1 # again, one human for now
