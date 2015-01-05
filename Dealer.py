@@ -31,17 +31,17 @@ class Dealer():
             #currentPlayer = self.currentGame.playerArray[playerIndex]
             if (i < len(self.currentGame.playerArray) - 1):
                 # Deal first card
-                self.currentGame.playerArray[playerIndex].hand[0] = self.currentDeck.cards[i]
-                print(self.currentDeck.cards[i].suit + self.currentDeck.cards[i].value)
+                self.currentGame.playerArray[playerIndex].set_firstCard(self.currentDeck.cards[i])
             else:
                 # Deal second card
-                self.currentGame.playerArray[playerIndex].hand[1] = self.currentDeck.cards[i]
+                print(self.currentDeck.cards[i].suit + self.currentDeck.cards[i].value)
+                self.currentGame.playerArray[playerIndex].set_secondCard(self.currentDeck.cards[i])
 
-        #print(self.currentGame.playerArray[0].hand)
-        print("Your hand is " + self.currentGame.playerArray[0].hand[0].suit
-                              + self.currentGame.playerArray[0].hand[0].value + " "
-                              + self.currentGame.playerArray[0].hand[1].suit
-                              + self.currentGame.playerArray[0].hand[1].value + ".")
+        print(self.currentGame.playerArray[0].firstCard)
+        print("Your hand is " + self.currentGame.playerArray[0].firstCard.suit
+                              + self.currentGame.playerArray[0].firstCard.value + " "
+                              + self.currentGame.playerArray[0].secondCard.suit
+                              + self.currentGame.playerArray[0].secondCard.value + ".")
 
     def getNextPlayerIndex(self, currentPos):
         arrayLength = len(self.currentGame.playerArray)

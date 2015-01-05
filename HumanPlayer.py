@@ -4,11 +4,26 @@
 
 import Card
 
-class HumanPlayer():
+class HumanPlayer(object):
     def __init__(self, startingChipCount):
         self.chipCount = startingChipCount
-        emptyCard = Card.Card(" ", " ")
-        self.hand = [emptyCard, emptyCard]
+        self._firstCard = None
+        self._secondCard = None
+
+    def get_firstCard(self):
+        return self._firstCard
+
+    def set_firstCard(self, value):
+        self._firstCard = value
+
+    def get_secondCard(self):
+        return self._secondCard
+
+    def set_secondCard(self, value):
+        self._secondCard = value
+
+    firstCard = property(get_firstCard, set_firstCard)
+    secondCard = property(get_secondCard, set_secondCard)
 
     def check():
         # player checks
