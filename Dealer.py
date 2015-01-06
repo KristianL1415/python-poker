@@ -25,17 +25,19 @@ class Dealer():
 
     def dealCards(self):
         #players = self.currentGame.playerArray
-        playerIndex = self.getNextPlayerIndex(self.button + 1)
+        playerIndex = self.getNextPlayerIndex(self.button)
 
         for i in range(0, len(self.currentGame.playerArray) * 2):
             #currentPlayer = self.currentGame.playerArray[playerIndex]
-            if (i < len(self.currentGame.playerArray) - 1):
+            if (i < len(self.currentGame.playerArray)):
                 # Deal first card
                 self.currentGame.playerArray[playerIndex].set_firstCard(self.currentDeck.cards[i])
             else:
                 # Deal second card
                 print(self.currentDeck.cards[i].suit + self.currentDeck.cards[i].value)
                 self.currentGame.playerArray[playerIndex].set_secondCard(self.currentDeck.cards[i])
+
+            playerIndex = self.getNextPlayerIndex(playerIndex)
 
         print(self.currentGame.playerArray[0].firstCard)
         print("Your hand is " + self.currentGame.playerArray[0].firstCard.suit
